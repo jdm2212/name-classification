@@ -14,6 +14,8 @@ def _load_batch(names):
     """
     Load responses the ethnicity classification API.
     """
+    if len(names) == 0:
+        return {}
     arguments = {"names": names}
     json_data = json.dumps(arguments).encode('utf8')
     request = urllib.request.Request(API_URL, data=json_data, headers=HEADERS)
@@ -48,27 +50,10 @@ def _load_batch_and_cache(names):
         values_to_return[name] = new_cache[name]
     return values_to_return
 
-def _highest_scoring_ethnicity(ethnicity_scores):
-    """
-    the ethnicity block looks like:
-    [{'score': '.05', ethnicity: 'foo'}, {'score': '0.4', ethnicity: 'bar'}]
-
-    This method returns the item with the highest score.
-    """
-    best = {'score': -1, 'ethnicity': 'ERROR_ETHNICITY'}
-    for ethnicity_score in ethnicity_scores:
-        if float(ethnicity_score['score']) > best['score']:
-            best['score'] = float(ethnicity_score['score'])
-            best['ethnicity'] = ethnicity_score['ethnicity']
-    return best
-
 def _highest_scores_for_name(name_scores):
-    continent = _highest_scoring_ethnicity(name_scores[0]['scores'])
-    region = _highest_scoring_ethnicity(name_scores[1]['scores'])
-    return [continent['ethnicity'],
-            continent['score'],
-            region['ethnicity'],
-            region['score']]
+    continent = name_scores[0]['best']
+    region = name_scores[1]['best']
+    return [continent, region]
 
 def _load_names_and_get_highest_ethnicities(names):
     batch_results = _load_batch_and_cache(names)
@@ -79,6 +64,6 @@ def _load_names_and_get_highest_ethnicities(names):
 
 
 
-NAMES = ["George Washington", "Barack Obama", "Xi Jinping"]
+NAMES = ["George Washington", "Barack Obama", "Xi Jinping", "Janet Lu"]
 output = _load_names_and_get_highest_ethnicities(NAMES)
 print(output)

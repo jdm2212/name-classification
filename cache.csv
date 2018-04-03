@@ -71,6 +71,51 @@
             ]
         }
     ],
+    "Janet Lu": [
+        {
+            "best": "Asian",
+            "scores": [
+                {
+                    "ethnicity": "Asian",
+                    "score": "0.59"
+                },
+                {
+                    "ethnicity": "GreaterAfrican",
+                    "score": "0.00"
+                },
+                {
+                    "ethnicity": "GreaterEuropean",
+                    "score": "0.41"
+                }
+            ]
+        },
+        {
+            "best": "GreaterEastAsian",
+            "scores": [
+                {
+                    "ethnicity": "IndianSubContinent",
+                    "score": "0.00"
+                },
+                {
+                    "ethnicity": "GreaterEastAsian",
+                    "score": "1.00"
+                }
+            ]
+        },
+        {
+            "best": "EastAsian",
+            "scores": [
+                {
+                    "ethnicity": "Japanese",
+                    "score": "0.00"
+                },
+                {
+                    "ethnicity": "EastAsian",
+                    "score": "1.00"
+                }
+            ]
+        }
+    ],
     "Xi Jinping": [
         {
             "best": "Asian",
