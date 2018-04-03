@@ -1,0 +1,119 @@
+{
+    "Barack Obama": [
+        {
+            "best": "GreaterAfrican",
+            "scores": [
+                {
+                    "ethnicity": "Asian",
+                    "score": "0.00"
+                },
+                {
+                    "ethnicity": "GreaterAfrican",
+                    "score": "0.90"
+                },
+                {
+                    "ethnicity": "GreaterEuropean",
+                    "score": "0.10"
+                }
+            ]
+        },
+        {
+            "best": "Africans",
+            "scores": [
+                {
+                    "ethnicity": "Africans",
+                    "score": "1.00"
+                },
+                {
+                    "ethnicity": "Muslim",
+                    "score": "0.00"
+                }
+            ]
+        }
+    ],
+    "George Washington": [
+        {
+            "best": "GreaterEuropean",
+            "scores": [
+                {
+                    "ethnicity": "Asian",
+                    "score": "-0.07"
+                },
+                {
+                    "ethnicity": "GreaterAfrican",
+                    "score": "0.00"
+                },
+                {
+                    "ethnicity": "GreaterEuropean",
+                    "score": "1.07"
+                }
+            ]
+        },
+        {
+            "best": "British",
+            "scores": [
+                {
+                    "ethnicity": "British",
+                    "score": "1.00"
+                },
+                {
+                    "ethnicity": "Jewish",
+                    "score": "-0.00"
+                },
+                {
+                    "ethnicity": "WestEuropean",
+                    "score": "-0.00"
+                },
+                {
+                    "ethnicity": "EastEuropean",
+                    "score": "0.00"
+                }
+            ]
+        }
+    ],
+    "Xi Jinping": [
+        {
+            "best": "Asian",
+            "scores": [
+                {
+                    "ethnicity": "Asian",
+                    "score": "1.00"
+                },
+                {
+                    "ethnicity": "GreaterAfrican",
+                    "score": "0.00"
+                },
+                {
+                    "ethnicity": "GreaterEuropean",
+                    "score": "0.00"
+                }
+            ]
+        },
+        {
+            "best": "GreaterEastAsian",
+            "scores": [
+                {
+                    "ethnicity": "IndianSubContinent",
+                    "score": "0.00"
+                },
+                {
+                    "ethnicity": "GreaterEastAsian",
+                    "score": "1.00"
+                }
+            ]
+        },
+        {
+            "best": "EastAsian",
+            "scores": [
+                {
+                    "ethnicity": "Japanese",
+                    "score": "0.00"
+                },
+                {
+                    "ethnicity": "EastAsian",
+                    "score": "1.00"
+                }
+            ]
+        }
+    ]
+}
