@@ -9,6 +9,7 @@ import urllib.request
 API_URL = 'http://www.textmap.com/ethnicity_api/api'
 HEADERS = {'content-type': 'application/json'}
 CACHE_FILE = "cache.csv"
+BATCH_SIZE = 2000
 
 def _load_batch(names):
     """
@@ -52,13 +53,22 @@ def _load_batch_and_cache(names):
         values_to_return[name] = new_cache[name]
     return values_to_return
 
+def _load_all(names):
+    index = 0
+    while index < len(names):
+        next_index = min(index + BATCH_SIZE, len(names))
+        next_batch = names[index:next_index]
+        _load_batch_and_cache(next_batch)
+        index = next_index
+    return _load_batch_and_cache(names)
+
 def _highest_scores_for_name(name_scores):
     continent = name_scores[0]['best']
     region = name_scores[1]['best']
     return [continent, region]
 
 def _load_names_and_get_highest_ethnicities(names):
-    batch_results = _load_batch_and_cache(names)
+    batch_results = _load_all(names)
     results = {}
     for name, scores in batch_results.items():
         results[name] = _highest_scores_for_name(scores)
