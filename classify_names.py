@@ -41,8 +41,10 @@ def _load_batch_and_cache(names):
             names_to_load.append(name)
     loaded = _load_batch(names_to_load)
     new_cache = {**loaded, **cache}
+    pretty_printed_cache = json.dumps(new_cache, indent=4, sort_keys=True)
+
     file = open(CACHE_FILE, 'w')
-    file.write(json.dumps(new_cache,indent=4, sort_keys=True))
+    file.write(pretty_printed_cache)
     file.close()
 
     values_to_return = {}
@@ -64,6 +66,6 @@ def _load_names_and_get_highest_ethnicities(names):
 
 
 
-NAMES = ["George Washington", "Barack Obama", "Xi Jinping", "Janet Lu"]
+NAMES = ["George Washington", "Barack Obama", "Xi Jinping", "Janet Lu", "Jeffrey Martin"]
 output = _load_names_and_get_highest_ethnicities(NAMES)
 print(output)

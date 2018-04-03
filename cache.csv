@@ -116,6 +116,46 @@
             ]
         }
     ],
+    "Jeffrey Martin": [
+        {
+            "best": "GreaterEuropean",
+            "scores": [
+                {
+                    "ethnicity": "Asian",
+                    "score": "-0.00"
+                },
+                {
+                    "ethnicity": "GreaterAfrican",
+                    "score": "0.00"
+                },
+                {
+                    "ethnicity": "GreaterEuropean",
+                    "score": "1.00"
+                }
+            ]
+        },
+        {
+            "best": "British",
+            "scores": [
+                {
+                    "ethnicity": "British",
+                    "score": "0.94"
+                },
+                {
+                    "ethnicity": "Jewish",
+                    "score": "0.00"
+                },
+                {
+                    "ethnicity": "WestEuropean",
+                    "score": "0.06"
+                },
+                {
+                    "ethnicity": "EastEuropean",
+                    "score": "-0.00"
+                }
+            ]
+        }
+    ],
     "Xi Jinping": [
         {
             "best": "Asian",
