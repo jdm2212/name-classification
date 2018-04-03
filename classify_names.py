@@ -8,7 +8,7 @@ import urllib.request
 
 API_URL = 'http://www.textmap.com/ethnicity_api/api'
 HEADERS = {'content-type': 'application/json'}
-CACHE_FILE = "cache.csv"
+CACHE_FILE = "cache.json"
 BATCH_SIZE = 2000
 
 def _load_batch(names):
