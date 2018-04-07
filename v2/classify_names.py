@@ -120,5 +120,5 @@ if len(sys.argv) is not 2:
 apiToken = sys.argv[1]
 
 NAMES = ["George Washington", "Barack Obama", "Xi Jinping", "Janet Lu", "Jeffrey Martin"]
-output = _load_all(NAMES, apiToken)
+output = _load_all([name.upper() for name in NAMES], apiToken)
 _print_csv(output)
