@@ -9,10 +9,11 @@ import json
 import urllib.request
 import urllib.parse
 import csv
+import datetime
 
 CACHE_FILE = "cache.json"
 OUTPUT_FILE = "classified_names.csv"
-BATCH_SIZE = 2000
+BATCH_SIZE = 30
 NATIONALITY = "nat"
 ETHNICITY = "eth" 
 
@@ -89,7 +90,7 @@ def _load_all(names, apiToken):
     index = 0
     while index < len(names):
         next_index = min(index + BATCH_SIZE, len(names))
-        print("next batch: names[" + str(index) + ":" + str(next_index) + "]")
+        print(str(datetime.datetime.now()) + ", next batch: names[" + str(index) + ":" + str(next_index) + "]")
         next_batch = names[index:next_index]
         _load_batch_and_cache(next_batch, apiToken)
         index = next_index
@@ -119,6 +120,12 @@ if len(sys.argv) is not 2:
 
 apiToken = sys.argv[1]
 
+inputNames = []
+with open('../initial_name_list.csv', newline='') as csvfile:
+    csvreader = csv.reader(csvfile)
+    for row in csvreader:
+        inputNames.append(row[1])
+
 NAMES = ["George Washington", "Barack Obama", "Xi Jinping", "Janet Lu", "Jeffrey Martin"]
-output = _load_all([name.upper() for name in NAMES], apiToken)
+output = _load_all([name.upper() for name in inputNames], apiToken)
 _print_csv(output)
